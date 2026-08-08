@@ -7,21 +7,21 @@ function CoverLetterForm({ onGenerate,loading }) {
         jobRole:"",
         company:"",
         skills:"",
-        resumeText:""  // change
+        resumeText:"" 
     });
      
-    //  change
+
     const [resumeName, setResumeName] = useState("");
     const [extracting, setExtracting] = useState(false);
 
-// input me type karne pe chalega
+
     function handleChange(event){
         const name = event.target.name;
         const value = event.target.value;
         setFormData({...formData,[name]:value });
     }
 
-    //change
+    
 
     async function handleResumeUpload(event){
         const file = event.target.files[0];
@@ -61,8 +61,8 @@ function CoverLetterForm({ onGenerate,loading }) {
     }
 
     function handleSubmit(event){
-        event.preventDefault(); // page reload mat karo
-        onGenerate(formData); //sara data home ko bhej do
+        event.preventDefault(); 
+        onGenerate(formData); 
     }
 
     const input = "w-full p-3 bg-gray-800 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none shadow-inner transition-all";
