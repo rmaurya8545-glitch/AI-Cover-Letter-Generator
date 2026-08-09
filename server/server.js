@@ -6,11 +6,8 @@ import { GoogleGenAI } from '@google/genai';
 import multer from 'multer';
 import { createRequire } from 'module';
 
-
 const require = createRequire(import.meta.url);
 const pdfParse = require('pdf-parse').default || require('pdf-parse');
-
-
 
 dotenv.config();
 const app = express();
