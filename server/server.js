@@ -4,14 +4,23 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
 import multer from 'multer';
-import { createRequire } from 'module';
+//import { createRequire } from 'module';
+import pkg from 'pdf-parse';
+const pdfParse = pkg;
 
-const require = createRequire(import.meta.url);
-const pdfParse = require('pdf-parse').default || require('pdf-parse');
+//const require = createRequire(import.meta.url);
+//const pdfParse = require('pdf-parse').default || require('pdf-parse');
+
+
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 const upload = multer({ storage:multer.memoryStorage()});
