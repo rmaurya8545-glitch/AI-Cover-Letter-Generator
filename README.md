@@ -69,7 +69,7 @@ npm install
 
 Create .env in server :
 
-PORT=5000
+PORT=3000
 API_KEY= Your_api_key_here
 
 ▶️ Run Project
