@@ -39,7 +39,7 @@ function CoverLetterForm({ onGenerate,loading }) {
             const fd = new FormData();
             fd.append("resume",file);
 
-            const res = await fetch("http://localhost:3000/api/upload-resume",{
+            const res = await fetch("https://ai-cover-letter-generator-ceqg.onrender.com/api/upload-resume",{
                 method:"POST",
                 body:fd
             });
