@@ -44,13 +44,17 @@ function CoverLetterForm({ onGenerate,loading }) {
                 body:fd
             });
 
-            if(!res.ok) throw new Error("⚠️ Upload failed!");
+            if(!res.ok){
+                const errorText = await res.text();
+                throw new Error(`Server error ${res.status}: ${errorText}`);
+            }
 
             const data = await res.json();
             setFormData(prev => ({...prev,resumeText:data.resumeText}));
         }catch(err){
-            console.error(err);
-            alert("An error occurred while parsing the resume. Please try again.");
+            console.error("Resume upload error: ",err); // 
+            alert(`Error: ${err.message}`); //
+           // alert("An error occurred while parsing the resume. Please try again.");
 
             setResumeName("");
             setFormData(prev => ({...prev, resumeText:""}));
