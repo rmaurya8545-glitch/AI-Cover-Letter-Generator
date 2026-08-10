@@ -38,7 +38,9 @@ function CoverLetterForm({ onGenerate,loading }) {
             const fd = new FormData();
             fd.append("resume",file);
 
-            const res = await fetch("https://ai-cover-letter-generator-ceqg.onrender.com/api/upload-resume",{
+            const API_URL = import.meta.env.VITE_API_URL;
+
+            const res = await fetch(`${API_URL}/api/upload-resume`,{
                 method:"POST",
                 body:fd
             });
@@ -86,8 +88,8 @@ function CoverLetterForm({ onGenerate,loading }) {
                     className="hidden" 
                     />
                     {extracting?(
-                        <span classname=" flex-w-full min-w-0 flex-col items-center gap-2">
-                            <div className="w-6 h-6 border-4 border-cyan-300 border-t-transparant rounded-full animate-spin"></div>
+                        <span className=" flex-w-full min-w-0 flex-col items-center gap-2">
+                            <div className="w-6 h-6 border-4 border-cyan-300 border-t-transparent rounded-full animate-spin"></div>
                             <span>The Resume is being Uploaded...</span>
                         </span>
                     ):resumeName ?(
