@@ -10,7 +10,6 @@ function CoverLetterForm({ onGenerate,loading }) {
         resumeText:"" 
     });
      
-
     const [resumeName, setResumeName] = useState("");
     const [extracting, setExtracting] = useState(false);
 
