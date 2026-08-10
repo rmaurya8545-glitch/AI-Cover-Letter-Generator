@@ -53,7 +53,6 @@ function CoverLetterForm({ onGenerate,loading }) {
         }catch(err){
             console.error("Resume upload error: ",err); // 
             alert(`Error: ${err.message}`); //
-           // alert("An error occurred while parsing the resume. Please try again.");
 
             setResumeName("");
             setFormData(prev => ({...prev, resumeText:""}));
