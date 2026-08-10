@@ -87,12 +87,12 @@ function CoverLetterForm({ onGenerate,loading }) {
                     className="hidden" 
                     />
                     {extracting?(
-                        <span classname="flex flex-col items-center gap-2">
+                        <span classname=" flex-w-full min-w-0 flex-col items-center gap-2">
                             <div className="w-6 h-6 border-4 border-cyan-300 border-t-transparant rounded-full animate-spin"></div>
                             <span>The Resume is being Uploaded...</span>
                         </span>
                     ):resumeName ?(
-                        <span className="text-gray-300"> Uploaded: {resumeName}</span>
+                        <span className="w-full max-w-full px-2 text-center text-gray-300 wrap-break-words"> Uploaded: {resumeName}</span>
                     ):(
                         <span>📄 Click to upload Resume</span>                    
                     )}
